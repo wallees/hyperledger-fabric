@@ -1,20 +1,4 @@
----
-title: "Build Your First Network 따라해보기"
-date: 2020-01-03 07:00:00 -0400
-categories: 
-    - hyperledger
-tags: 
-    - hyperledger fabric
-author_profile: false
-toc: true
-toc_sticky: true
-toc_label: "목차"
-comments: true
----
-
 > 하이퍼레저 패브릭에서 제공하는 BYFN(Build Your First Network) 예제를 하나씩 가볍게 살펴본다.
-
-출처 : [https://hyperledger-fabric.readthedocs.io/en/release-1.4/build_network.html](https://hyperledger-fabric.readthedocs.io/en/release-1.4/build_network.html)
 
 <br/>
 
