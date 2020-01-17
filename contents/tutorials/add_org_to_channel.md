@@ -1,6 +1,8 @@
 # 채널에 조직(Org) 추가하기
 > BYFN(2org 4peer)에 org3를 추가한다.
 
+> 하이퍼레저 공식 문서 : [hyperledger-fabric.readthedocs.io](https://hyperledger-fabric.readthedocs.io/en/release-1.4/channel_update_tutorial.html#adding-an-org-to-a-channel)
+
 <br/>
 
 ## 전제

@@ -1,6 +1,8 @@
 # 채널 ACL 값 변경하기
 > BYFN으로 구성된 채널의 ACL 값을 변경한다.
 
+> 하이퍼레저 공식 문서 : [hyperledger-fabric.readthedocs.io](https://hyperledger-fabric.readthedocs.io/en/release-1.4/access_control.html#updating-acl-defaults-in-the-channel-config)
+
 <br/>
 
 ## 기존 Policy

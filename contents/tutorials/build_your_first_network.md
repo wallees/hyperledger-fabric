@@ -1,5 +1,7 @@
 > 하이퍼레저 패브릭에서 제공하는 BYFN(Build Your First Network) 예제를 하나씩 가볍게 살펴본다.
 
+> 하이퍼레저 공식 문서 : [hyperledger-fabric.readthedocs.io](https://hyperledger-fabric.readthedocs.io/en/release-1.4/build_network.html#building-your-first-network)
+
 <br/>
 
 # 1. 인증서, 키 만들기

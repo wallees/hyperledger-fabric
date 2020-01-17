@@ -1,6 +1,7 @@
 # 채널 설정 값 변경하기
-
 > 구성된 채널의 특정 설정 값(max_message_count)을 변경한다.
+
+> 하이퍼레저 공식 문서 : [hyperledger-fabric.readthedocs.io](https://hyperledger-fabric.readthedocs.io/en/release-1.4/config_update.html#updating-a-channel-configuration)
 
 <br/>
 
