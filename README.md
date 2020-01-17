@@ -15,7 +15,7 @@
 #### 운영 가이드
 - ##### [채널 설정 값 변경하기](/contents/op_guides/update_channel_configuration.md)
 - ##### [채널 ACL 값 변경하기](/contents/op_guides/update_acl.md)
-- ##### [Kafka-Zookeeper 기반의 오더링 서비스 적용하기](/contents/op-guides-kafka-service.md)
+- ##### [Kafka-Zookeeper 기반의 오더링 서비스 적용하기](/contents/op-guides/kafka-service.md)
 
 #### 기타
 - ##### [하이퍼레저 네트워크에 생성된 블록 확인하기](/contents/etc/block_physical_path.md)
