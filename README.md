@@ -1,27 +1,19 @@
 # Hyperledger Fabric
-> 하이퍼레저 패브릭 v1.4 기준으로 작성되었습니다.
+
+## [v1.4](/v1.4/README.md)
+- ### [Hyperledger Fabric Docs](/v1.4/docs/README.md)
+- ### 아키텍트 파일럿
 
 <br/>
 
-### [CHFA(하이퍼레저 자격증)](/v1.4.3/contents/chfa/chfa.md)
+## v2.0
+- ### [What’s new in Hyperledger Fabric v2.0](/v2.0/docs/whats_new.md)
+- ### 아키텍트 파일럿
 
 <br/>
 
-### Hyperledger Fabric Docs
-#### 튜토리얼
-- ##### [Building Your First Network](/v1.4.3/contents/tutorials/build_your_first_network.md)
-- ##### [채널에 Org 추가하기](/v1.4.3/contents/tutorials/add_org_to_channel.md)
-
-#### 운영 가이드
-- ##### [채널 설정 값 변경하기](/v1.4.3/contents/op_guides/update_channel_configuration.md)
-- ##### [채널 ACL 값 변경하기](/v1.4.3/contents/op_guides/update_acl.md)
-- ##### [Kafka-Zookeeper 기반의 오더링 서비스 적용하기](/v1.4.3/contents/op_guides/kafka_service.md)
-
-#### 기타
-- ##### [하이퍼레저 네트워크에 생성된 블록 확인하기](/v1.4.3/contents/etc/block_physical_path.md)
-
-
-<br/>
-
-### 네트워크/아키텍처 구성
+## Tips
+- [컨테이너 내부에 생성된 블록 확인](/tips/block_physical_path.md)
+- [로그 레벨 변경](/tips/change_log_level.md)
+- [컨테이너 실행 결과를 파일로 작성](/tips/get_result_file_from_container.md)
 
