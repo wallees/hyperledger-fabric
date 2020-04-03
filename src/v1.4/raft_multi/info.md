@@ -17,8 +17,8 @@
 ## VM 구성
 | VM | 컨테이너 | 
 |:--- |:--- | 
-| admnode1  | orderer1.rm.com, orderer2.rm.com, peer1.adminorg.rm.com |
-| admnode2 | orderer3.rm.com, peer2.adminorg.rm.com |
+| admnode1  | orderer1.rm.com, orderer2.rm.com, peer1.admorg.rm.com |
+| admnode2 | orderer3.rm.com, peer2.admorg.rm.com |
 | node1 | peer1.org1.rm.com |
 | node2 | peer1.org2.rm.com |
 

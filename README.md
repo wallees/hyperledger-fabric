@@ -19,7 +19,7 @@
 
 | | 프로젝트 | 구성 | 버전 | 
 | :--: | :------- | :---- | :---- | 
-| 1 | [Raft 기반의 시스템 구축하기](/src/v1.4/raft_multi/info.md) | Orderer(3), Org(4), Peer(5) | v1.4 |  
+| 1 | [Raft 기반의 시스템 구축하기](/src/v1.4/raft_multi/info.md) | Orderer(3), Org(3), Peer(4) | v1.4 |  
 
 <br>
 <br>
