@@ -17,7 +17,7 @@
 
 # src
 
-|| 프로젝트 | 구성 | 버전 | 
+| | 프로젝트 | 구성 | 버전 | 
 | :--: |:------- | :---- | :---- | 
 | 1 | [Raft 기반의 시스템 구축하기](/src/v1.4/raft_multi/info.md) | Orderer(3), Org(4), Peer(5) | v1.4 |  
 
@@ -28,7 +28,7 @@
 # doc 
 
 #### Key Concepts
-|| 주제 |
+| | 주제 |
 |:--: |:------- | :---- | 
 | 1 | [The Ordering Service - Raft](/doc/key_concept/raft.md) |
 
@@ -40,7 +40,7 @@
 
 
 #### Operation Guides
-|| 주제 |
+| | 주제 |
 |:--: |:------- | :---- | 
 | 1 | [Updating ACL defaults in the channel config](/doc/op_guides/update_acl.md) | Operations Guides |
 | 2 | [Updating a Channel Configuration](/doc/op_guides/update_channel_configuration.md) | Operations Guides |
@@ -53,7 +53,7 @@
 
 # tip
 
-|| 주제 | 
+| | 주제 | 
 | :--: |:------- | :---: |
 | 1 | [하이퍼레저 네트워크에 생성된 블록 확인하기](/tip/block_physical_path.md) 
 | 2 | [log 레벨 변경하기](/tip/change_log_level.md)
