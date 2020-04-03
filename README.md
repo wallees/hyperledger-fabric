@@ -35,8 +35,8 @@
 
 #### Tutorials
 
-|| 주제 |
-| :--: | :------- | :---- | 
+| | 주제 |
+| :--: | :------- |
 | 1 | [Build Your First Network](/doc/tutorials/build_your_first_network.md) |
 | 2 | [Adding an Org to a Channel](/doc/tutorials/add_org_to_channel.md) | 
 
