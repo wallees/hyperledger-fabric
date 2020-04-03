@@ -43,12 +43,12 @@
 
 #### Operation Guides
 
-| | 주제 | 대분류 |
-| :--: | :------- | :---- | 
-| 1 | [Updating ACL defaults in the channel config](/doc/op_guides/update_acl.md) | Operations Guides |
-| 2 | [Updating a Channel Configuration](/doc/op_guides/update_channel_configuration.md) | Operations Guides |
-| 3 | [Bringing up a Kafka-based Ordering Service](/doc/op_guides/kafka_service.md) | Operations Guides |
-| 4 | [Configuring and operating a Raft ordering service](/doc/op_guides/raft_service.md) | Operations Guides |
+| | 주제 |
+| :--: | :------- | 
+| 1 | [Updating ACL defaults in the channel config](/doc/op_guides/update_acl.md) |
+| 2 | [Updating a Channel Configuration](/doc/op_guides/update_channel_configuration.md) |
+| 3 | [Bringing up a Kafka-based Ordering Service](/doc/op_guides/kafka_service.md) |
+| 4 | [Configuring and operating a Raft ordering service](/doc/op_guides/raft_service.md) |
 
 
 <br>
@@ -58,8 +58,6 @@
 
 | | 주제 | 
 | :--: | :------- |
-
-
 | 1 | [하이퍼레저 네트워크에 생성된 블록 확인하기](/tip/block_physical_path.md) 
 | 2 | [log 레벨 변경하기](/tip/change_log_level.md)
 | 3 | [컨테이너에서 실행한 결과 파일에 작성하기](/tip/get_result_file_from_container.md)
