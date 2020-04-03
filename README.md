@@ -28,11 +28,13 @@
 # doc 
 
 #### Key Concepts
+
 | 순번 | 주제 |
-| :--: | :------- | :---- | 
+| :--: | :------- |
 | 1 | [The Ordering Service - Raft](/doc/key_concept/raft.md) |
 
 #### Tutorials
+
 || 주제 |
 | :--: | :------- | :---- | 
 | 1 | [Build Your First Network](/doc/tutorials/build_your_first_network.md) |
@@ -40,6 +42,7 @@
 
 
 #### Operation Guides
+
 | | 주제 |
 | :--: | :------- | :---- | 
 | 1 | [Updating ACL defaults in the channel config](/doc/op_guides/update_acl.md) | Operations Guides |
