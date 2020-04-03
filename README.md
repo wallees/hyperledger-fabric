@@ -14,8 +14,6 @@
 
 <br>
 <br>
-<br>
-<br>
 
 # src
 
@@ -55,11 +53,10 @@
 
 # tip
 
-|| 주제 | 작성일 |
+|| 주제 | 
 | :--: |:------- | :---: |
-| 1 | [하이퍼레저 네트워크에 생성된 블록 확인하기](/tip/block_physical_path.md) |2019.11.20|
-| 2 | [log 레벨 변경하기](/tip/change_log_level.md) |2019.11.23| 
-| 3 | [컨테이너에서 실행한 결과 파일에 작성하기](/tip/get_result_file_from_container.md) |2019.11.23|
+| 1 | [하이퍼레저 네트워크에 생성된 블록 확인하기](/tip/block_physical_path.md) 
+| 2 | [log 레벨 변경하기](/tip/change_log_level.md)
+| 3 | [컨테이너에서 실행한 결과 파일에 작성하기](/tip/get_result_file_from_container.md)
 
-<br>
 
