@@ -32,6 +32,7 @@
 | | 주제 |
 | :--: | :------- |
 | 1 | [The Ordering Service - Raft](/doc/key_concept/raft.md) |
+| 2 | [Private Data](/doc/key_concept/private_data.md) |
 
 #### Tutorials
 
@@ -39,7 +40,7 @@
 | :--: | :------- |
 | 1 | [Build Your First Network](/doc/tutorials/build_your_first_network.md) |
 | 2 | [Adding an Org to a Channel](/doc/tutorials/add_org_to_channel.md) | 
-
+| 3 | [Using Private Data in Fabric](/doc/tutorials/using_private_data_in_fabric.md) | 
 
 #### Operation Guides
 
@@ -49,7 +50,6 @@
 | 2 | [Updating a Channel Configuration](/doc/op_guides/update_channel_configuration.md) |
 | 3 | [Bringing up a Kafka-based Ordering Service](/doc/op_guides/kafka_service.md) |
 | 4 | [Configuring and operating a Raft ordering service](/doc/op_guides/raft_service.md) |
-
 
 <br>
 <br>
