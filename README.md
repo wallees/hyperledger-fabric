@@ -52,6 +52,12 @@
 | 4 | [Configuring and operating a Raft ordering service](/doc/op_guides/raft_service.md) |
 | 5 | [Endorsement policies](/doc/op_guides/endorsement_policies.md) |
 
+#### Architecture Reference
+
+| | 주제 |
+| :--: | :------- | 
+| 1 | [Service Discovery](/doc/archi_ref/service_discovery.md) |
+
 <br>
 <br>
 
