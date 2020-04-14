@@ -870,7 +870,7 @@ configtxlator proto_encode --input config.json --type common.Config --output con
 configtxlator compute_update --channel_id mychannel --original config.pb --updated modified_config.pb --output diff_config.pb
 ```
 
-## 10. 블록 파일(diff_config.pb)을 JSON 형태로 변환
+### 10. 블록 파일(diff_config.pb)을 JSON 형태로 변환
 ```bash
 configtxlator proto_decode --input diff_config.pb --type common.ConfigUpdate | jq . > diff_config.json
 ```
