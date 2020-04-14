@@ -842,18 +842,16 @@ cp config.json modified_config.json</code></pre>
 vim modified_config.json
 ```
 ```json
-    ...
-        "values": {
-          "BatchSize": {
-            "mod_policy": "Admins",
-            "value": {
-              "absolute_max_bytes": 103809024,
-              "max_message_count": 10,
-              "preferred_max_bytes": 524288
-            },
-            "version": "0"
-          }
-    ...
+"values": {
+    "BatchSize": {
+        "mod_policy": "Admins",
+        "value": {
+            "absolute_max_bytes": 103809024,
+            "max_message_count": 10,
+            "preferred_max_bytes": 524288
+        },
+        "version": "0"
+    }    
 ```
 - max_message_count : 10 -> 11
 
@@ -913,17 +911,15 @@ vim config2.json
 
 - config2.json : line 590
     ```json
-    ...
-        "values": {
-          "BatchSize": {
-            "mod_policy": "Admins",
-            "value": {
-              "absolute_max_bytes": 103809024,
-              "max_message_count": 11,
-              "preferred_max_bytes": 524288
-            },
-            "version": "0"
-          }
-    ...
+    "values": {
+        "BatchSize": {
+        "mod_policy": "Admins",
+        "value": {
+            "absolute_max_bytes": 103809024,
+            "max_message_count": 11,
+            "preferred_max_bytes": 524288
+        },
+        "version": "0"
+    }
     ```
     - 값이 변경되어 있음을 확인할 수 있다.
