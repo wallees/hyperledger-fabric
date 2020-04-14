@@ -895,7 +895,7 @@ export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/pee
 peer channel signconfigtx -f diff_config_envelope.pb
 ```
 
-## 14. 채널 업데이트
+### 14. 채널 업데이트
 ```bash
 peer channel update -f diff_config_envelope.pb -c mychannel -o orderer.example.com:7050 --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
 ```
