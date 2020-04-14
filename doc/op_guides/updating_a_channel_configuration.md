@@ -724,11 +724,15 @@
 - Batch Size: 블록의 트랜잭션 수 또는 크기
     ```json
     {
-        "absolute_max_bytes": 102760448,   # 블록의 최대 크기
-        "max_message_count": 10,           # 블록 내 최대 트랜잭션 수
-        "preferred_max_bytes": 524288      # 적정 블록 크기, 이보다 크면 블록을 나누어 저장
+        "absolute_max_bytes": 102760448,    
+        "max_message_count": 10,            
+        "preferred_max_bytes": 524288       
     }
     ```
+    - absolute_max_bytes: 블록의 최대 크기
+    - max_message_count: 블록 내 최대 트랜잭션 수
+    - preferred_max_bytes: 적정 블록 크기, 이보다 크면 블록을 나누어 저장
+
 - Batch Timeout: 블록 생성 주기. 트랜잭션 저장 이후에 다음 트랜잭션을 기다리는 시간
     ```json
     { "timeout": "2s" }     # 너무 빠르면 블록이 자주 생성됨, 블록이 낭비되고 처리량은 감소함
