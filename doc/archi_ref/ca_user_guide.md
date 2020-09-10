@@ -25,8 +25,6 @@
 
 ## Fabric CA Server
 
-<br>
-
 ### Initializing the server
 
 docker exec -it fabric-ca-server /bin/bash
@@ -77,8 +75,6 @@ fabric-ca-server init -b admin:adminpw
 <br>
 
 ## Fabric CA Client
-
-<br>
 
 ###  Enrolling the bootstrap identity
 
