@@ -56,11 +56,14 @@
 | 4 | [Configuring and operating a Raft ordering service](/doc/op_guides/raft_service.md) |
 | 5 | [Endorsement policies](/doc/op_guides/endorsement_policies.md) |
 
+<br>
+
 #### Architecture Reference
 
 | | 주제 |
 | :--: | :------- | 
 | 1 | [Service Discovery](/doc/archi_ref/service_discovery.md) |
+| 2 | [Hyperledger Fabric CA's User Guide](/doc/archi_ref/ca_user_guide.md) |
 
 <br>
 <br>
