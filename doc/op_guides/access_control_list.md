@@ -227,8 +227,8 @@ peer channel signconfigtx -f diff_config_envelope.pb
 #### Org2 Admin
 export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp
 export CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt
-export CORE_PEER_ADDRESS=peer0.org2.example.com:7051
-export CORE_PEER_LOCALMSPID="Org2MSP"</code></pre>
+export CORE_PEER_ADDRESS=peer0.org2.example.com:9051
+export CORE_PEER_LOCALMSPID="Org2MSP"
 
 peer channel signconfigtx -f diff_config_envelope.pb
 
@@ -247,6 +247,8 @@ peer chaincode invoke -o orderer.example.com:7050 --tls true --cafile /opt/gopat
     - Error: error endorsing invoke: rpc error: code = Unknown desc = failed evaluating policy on signed data during check policy [/Channel/Application/MyPolicy]: [signature set did not satify policy] - proposal response: nil
 
 <br>
+
+peer chaincode invoke -o orderer.example.com:7050 --tls true --cafile $ORDERER_CA -C $CHANNEL_NAME -n mycc --peerAddresses peer0.org1.example.com:7051 --tlsRootCertFiles /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt -c '{"Args":["invoke","a","b","10"]}'
 
 ### MyPolicy의 Rule 수정하기
 
