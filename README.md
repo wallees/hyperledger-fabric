@@ -50,7 +50,7 @@
 
 | | 주제 | Source |
 | :--: | :------- | :--------- |
-| 1 | [Access Control List](/doc/op_guides/access_control_list.md) | [Updating ACL defaults in the channel config](/doc/op_guieds/updating_acl_defaults_in_the_channel_config.md) |
+| 1 | [Access Control List](/doc/op_guides/access_control_list.md) | [Updating ACL defaults in the channel config](/doc/op_guides/updating_acl_defaults_in_the_channel_config.md) |
 | 2 | [Updating a Channel Configuration](/doc/op_guides/updating_a_channel_configuration.md) | [Updating max_message_count in the channel config](/doc/op_guides/updating_max_message_count.md)
 | 3 | [Bringing up a Kafka-based Ordering Service](/doc/op_guides/kafka_service.md) |
 | 4 | [Configuring and operating a Raft ordering service](/doc/op_guides/raft_service.md) |
