@@ -1,4 +1,4 @@
-# CHFA 복기
+# CHFA Questions
 
 ## 1. 2020.09.11 06:00
 
@@ -41,6 +41,7 @@
         - peer1.org2
             - CORE_PEER_GOSSIP_USELEADERELECTION=false
             - CORE_PEER_GOSSIP_ORGLEADER=true
+    - env 확인
 
 8. Raft로 네트워크 구동
     - configtx.yaml에 해당 프로파일 적혀있음
@@ -64,3 +65,6 @@
 
 12. 체인코드 Instantiate 과정에서 발생항 오류 확인하고 이를 해결
     - 체인코드 install이 선행되지 않아서 발생하는 오류였음
+    - channel join도..??
+    
+     
