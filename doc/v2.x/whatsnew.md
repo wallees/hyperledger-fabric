@@ -12,7 +12,7 @@
 - [Private Data](https://hyperledger-fabric.readthedocs.io/en/release-2.2/private-data-arch.html)
 - [External Builders and Launchers](https://hyperledger-fabric.readthedocs.io/en/release-2.2/cc_launcher.html)
 - CouchDB peer cache
-- 
+- [Test network](https://hyperledger-fabric.readthedocs.io/en/release-2.2/test_network.html)
 
 
 
