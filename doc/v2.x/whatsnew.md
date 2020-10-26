@@ -6,6 +6,8 @@
 
 
 
+<br>
+
 ## Big change components
 
 - [Fabric chaincode lifecycle](https://hyperledger-fabric.readthedocs.io/en/release-2.2/chaincode_lifecycle.html)
@@ -14,7 +16,7 @@
 - CouchDB peer cache
 - [Test network](https://hyperledger-fabric.readthedocs.io/en/release-2.2/test_network.html)
 
-
+<br>
 
 ## Decentralized governance for smart contracts
 
@@ -44,7 +46,7 @@ The new Fabric chaincode lifecycle allows multiple organizations to come to agre
 
   > Org별로 체인코드를 각자 관리하고 검증할 수 있다는 말 같은데, 확인해보아야 할 것 같다.
 
-
+<br>
 
 ## New chaincode application patterns for collaboration and consensus
 
@@ -56,7 +58,7 @@ The same decentralized methods of coming to agreement that underpin the new chai
 
   > 체인코드의 제안에 관여하는 org 구성원들의 합의가 이루어진 이후에 proposal이 진행된다. 이전의 방법이 특정 org의 주도로 진행되었다면, 변경된 방식은 org 각각의 의사결정권을 존중하고 해당 영향력을 키운 것으로 보인다.
 
-
+<br>
 
 ## Private data enhancements
 
@@ -72,7 +74,7 @@ The same decentralized methods of coming to agreement that underpin the new chai
 
 - **Implicit per-organization collections** : Implicit organization-specific collections can be used without any upfront definition.
 
-
+<br>
 
 ## External chaincode launcher
 
@@ -92,7 +94,7 @@ The external chaincode launcher feature empowers operators to build and launch c
 
   > 컨테이너에 종속되지 않음으로써, k8s와 같은 도구를 이용하여 체인코드의 실행을 관리/제어할 수 있다.
 
-
+<br>
 
 ## State database cache for improved performance on CouchDB
 
@@ -102,7 +104,7 @@ The cache size can be configured by using the core.yaml property `cacheSize`.
 
 > couchdb의 문제였던 승인 및 유효성 검사 과정에서의 읽기 지연 현상 해결을 위해, 새로운 피어 캐시를 도입하였다. (couchdb를 계속 가지고 가는 패브릭?)
 
-
+<br>
 
 ## Alpine-based docker images
 
@@ -110,13 +112,13 @@ Starting with v2.0, <u>Hyperledger Fabric Docker images will use Alpine Linux, a
 
 > smaller, faster, less disk space
 
-
+<br>
 
 ## Sample test network
 
 The test network is built to be a modular and user friendly sample Fabric network that makes it easy to test your applications and smart contracts. 
 
-
+<br>
 
 ## Upgrading to Fabric v2.x
 
