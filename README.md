@@ -13,6 +13,7 @@
 | [tip](#tip) | 하이퍼레저 패브릭 외에 관련된 내용 정리 |
 
 <br>
+
 <br>
 
 # src
@@ -22,49 +23,25 @@
 | 1 | [Raft 기반의 시스템 구축하기](/src/v1.4/raft_multi/info.md) | Orderer(3), Org(3), Peer(4) | v1.4 |
 
 <br>
+
 <br>
 
 # doc 
 
-#### Key Concepts
+### [v1.4](/doc/v1.4/v1.4.md)
 
-| | 주제 |
-| :--: | :------- |
-| 1 | [The Ordering Service - Raft](/doc/v1.4/key_concept/raft.md) |
-| 2 | [Private Data](/doc/v1.4/key_concept/private_data.md) |
+----
 
-<br>
+### v2.2
 
-#### Tutorials
-
-| | 주제 |
-| :--: | :------- |
-| 1 | [Build Your First Network](/doc/v1.4/tutorials/build_your_first_network.md) |
-| 2 | [Adding an Org to a Channel](/doc/v1.4/tutorials/add_org_to_channel.md) |
-| 3 | [Using Private Data in Fabric](/doc/v1.4/tutorials/using_private_data_in_fabric.md) |
-
-<br>
-
-#### Operation Guides
+#### New concepts
 
 | | 주제 | Source |
 | :--: | :------- | :--------- |
-| 1 | [Access Control List](/doc/op_guides/v1.4/access_control_list.md) | [Updating ACL defaults in the channel config](/doc/v1.4/op_guides/updating_acl_defaults_in_the_channel_config.md) |
-| 2 | [Updating a Channel Configuration](/doc/v1.4/op_guides/updating_a_channel_configuration.md) | [Updating max_message_count in the channel config](/doc/v1.4/op_guides/updating_max_message_count.md) |
-| 3 | [Bringing up a Kafka-based Ordering Service](/doc/v1.4/op_guides/kafka_service.md) ||
-| 4 | [Configuring and operating a Raft ordering service](/doc/v1.4/op_guides/raft_service.md) ||
-| 5 | [Endorsement policies](/doc/v1.4/op_guides/endorsement_policies.md) ||
+| 1 | [What’s new in Hyperledger Fabric v2.x](/doc/v2.x/whatsnew.md) |        |
 
 <br>
 
-#### Architecture Reference
-
-| | 주제 |
-| :--: | :------- |
-| 1 | [Service Discovery](/doc/v1.4/archi_ref/service_discovery.md) |
-| 2 | [Hyperledger Fabric CA's User Guide](/doc/v1.4/archi_ref/ca_user_guide.md) |
-
-<br>
 <br>
 
 # tip
