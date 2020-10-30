@@ -22,17 +22,19 @@ Organizations:
             - orderer2.mynetwork.com:10020
             - orderer3.mynetwork.com:10030
 
-    - &Org1        
+    - &Org1
         Name: Org1MSP
         ID: Org1MSP
         MSPDir: /root/git/src/mynetwork/instance0/data/cryptofile/peerOrganizations/org1.mynetwork.com/msp
         Policies:
             Readers:
                 Type: Signature
-                Rule: "OR('Org1MSP.admin', 'Org1MSP.peer', 'Org1MSP.client')"
+                # Rule: "OR('Org1MSP.admin', 'Org1MSP.peer', 'Org1MSP.client')"
+                Rule: "OR('Org1MSP.member')"
             Writers:
                 Type: Signature
-                Rule: "OR('Org1MSP.admin', 'Org1MSP.client')"
+                # Rule: "OR('Org1MSP.admin', 'Org1MSP.client')"
+                Rule: "OR('Org1MSP.member')"
             Admins:
                 Type: Signature
                 Rule: "OR('Org1MSP.admin')"
