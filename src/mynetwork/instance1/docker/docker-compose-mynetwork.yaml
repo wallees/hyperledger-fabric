@@ -32,11 +32,11 @@ services:
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric
     command: orderer
     volumes:
-        - /root/mynetwork/data/channel-artifacts/system-genesis-block/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
-        - /root/mynetwork/data/cryptofile/ordererOrganizations/mynetwork.com/orderers/orderer2.mynetwork.com/msp:/var/hyperledger/orderer/msp
-        - /root/mynetwork/data/cryptofile/ordererOrganizations/mynetwork.com/orderers/orderer2.mynetwork.com/tls/:/var/hyperledger/orderer/tls
+        - /root/git/src/mynetwork/instance1/data/channel-artifacts/system-genesis-block/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
+        - /root/git/src/mynetwork/instance1/data/cryptofile/ordererOrganizations/mynetwork.com/orderers/orderer2.mynetwork.com/msp:/var/hyperledger/orderer/msp
+        - /root/git/src/mynetwork/instance1/data/cryptofile/ordererOrganizations/mynetwork.com/orderers/orderer2.mynetwork.com/tls/:/var/hyperledger/orderer/tls
         #- orderer2.mynetwork.com:/var/hyperledger/production/orderer
-        #- /root/mynetwork/volume/orderer2.mynetwork.com:/var/hyperledger/production/orderer
+        #- /root/git/src/mynetwork/instance1/volume/orderer2.mynetwork.com:/var/hyperledger/production/orderer
     ports:
       - 10020:10020
     networks:
@@ -77,9 +77,9 @@ services:
       - CORE_PEER_LOCALMSPID=Org1MSP
     volumes:
         - /var/run/:/host/var/run/
-        - /root/mynetwork/data/cryptofile/peerOrganizations/org1.mynetwork.com/peers/peer1.org1.mynetwork.com/msp:/etc/hyperledger/fabric/msp
-        - /root/mynetwork/data/cryptofile/peerOrganizations/org1.mynetwork.com/peers/peer1.org1.mynetwork.com/tls:/etc/hyperledger/fabric/tls
-        #- /root/mynetwork/volume/peer1.org1.mynetwork.com:/var/hyperledger/production
+        - /root/git/src/mynetwork/instance1/data/cryptofile/peerOrganizations/org1.mynetwork.com/peers/peer1.org1.mynetwork.com/msp:/etc/hyperledger/fabric/msp
+        - /root/git/src/mynetwork/instance1/data/cryptofile/peerOrganizations/org1.mynetwork.com/peers/peer1.org1.mynetwork.com/tls:/etc/hyperledger/fabric/tls
+        #- /root/git/src/mynetwork/instance1/volume/peer1.org1.mynetwork.com:/var/hyperledger/production
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     command: peer node start
     ports:

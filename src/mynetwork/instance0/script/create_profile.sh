@@ -20,7 +20,6 @@ cryptogen generate --config=$CRYPTO_PATH/crypto-config-org2.yaml --output="${BAS
 
 echo ""
 echo "2. Configtxgen - Generate Orderer Genesis block"
-#export FABRIC_CFG_PATH=${PWD}/configtx
 export FABRIC_CFG_PATH=$UTIL_PATH/configtx
 sudo rm -Rf ${BASE_PATH}/data/channel-artifacts/*
 configtxgen -profile TwoOrgsOrdererGenesis -channelID system-channel -outputBlock $DATA_PATH/channel-artifacts/system-genesis-block/genesis.block
@@ -37,9 +36,3 @@ configtxgen -profile TwoOrgsChannel -outputAnchorPeersUpdate $DATA_PATH/channel-
 
 echo ""
 echo "Done"
-
-
-# tar cvf data.tar ../data
-# scp -r data.tar root@orderer2.mynetwork.com:/root/git/src/mynetwork/instance1
-# scp -r data.tar root@orderer3.mynetwork.com:/root/git/src/mynetwork/instance2
-# sudo rm -f data.tar
