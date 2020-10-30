@@ -19,7 +19,7 @@
 
 | | 프로젝트 | 구성 | 버전 |
 | :--: | :------- | :---- | :---- |
-| 1 | [멀티노드 기반 test-network 구축](mynetwork/mynetwork.md) | Orderer(3), Org(2), Peer(3) | v2.2 |
+| 1 | [멀티노드 기반 test-network 구축](src/mynetwork/mynetwork.md) | Orderer(3), Org(2), Peer(3) | v2.2 |
 
 <br>
 
