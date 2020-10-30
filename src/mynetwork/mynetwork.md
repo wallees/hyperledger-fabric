@@ -10,9 +10,9 @@
     - org1: peer1.org1.mynetwork.com
     - org2: peer1.org2.mynetwork.com. peer2.org2.mynetwork.com
   - VM: 총 3대
-    - [instance0](/instance0/docker/docker-compose-mynetwork.yaml): orderer1.mynetwork.com
-    - [instance1](/instance1/docker/docker-compose-mynetwork.yaml): orderer2.mynetwork.com, peer1.org1.mynetwork.com
-    - [instacne2](/instance2/docker/docker-compose-mynetwork.yaml): orderer3.mynetwork.com, peer1.org2.mynetwork.com, peer2.org2.mynetwork.com
+    - [instance0](instance0/docker/docker-compose-mynetwork.yaml): orderer1.mynetwork.com
+    - [instance1](instance1/docker/docker-compose-mynetwork.yaml): orderer2.mynetwork.com, peer1.org1.mynetwork.com
+    - [instance2](instance2/docker/docker-compose-mynetwork.yaml): orderer3.mynetwork.com, peer1.org2.mynetwork.com, peer2.org2.mynetwork.com
 - 경로: /root/git/src/mynetwork/instance ...
 
 
