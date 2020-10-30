@@ -1,36 +1,29 @@
 # Hyperledger Fabric
 
-> 하이퍼레저 패브릭에 대한 내용을 적어두는 리포지토리
+> 하이퍼레저 패브릭(v2.2)에 대한 내용을 적어두는 리포지토리
 
 <br>
 
-# 구성
+## 구성
 
 | 이름 | 설명 |
 | :--- | :-------- |
 | [src](#src) | 하이퍼레저 패브릭 테스트 소스코드 및 내용 정리 |
 | [doc](#doc) | Hyperledger Fabric doc 내용 번역 또는 개인 정리 |
 | [tip](#tip) | 하이퍼레저 패브릭 외에 관련된 내용 정리 |
+| [prv](#prv) | 하이퍼레저 이전 버전(v1.4)에 대한 내용 정리 |
 
 <br>
 
-<br>
-
-# src
+## src
 
 | | 프로젝트 | 구성 | 버전 |
 | :--: | :------- | :---- | :---- |
-| 1 | [Raft 기반의 시스템 구축하기](/src/v1.4/raft_multi/info.md) | Orderer(3), Org(3), Peer(4) | v1.4 |
+| 1 | 멀티노드 기반 test-network 구축 | Orderer(3), Org(2), Peer(3) | v2.2 |
 
 <br>
 
-<br>
-
-# doc 
-
-#### [v1.4](/doc/v1.4/v1.4.md)
-
-### v2.2
+## doc 
 
 #### New concepts
 
@@ -40,9 +33,7 @@
 
 <br>
 
-<br>
-
-# tip
+## tip
 
 | | 주제 |
 | :--: | :------- |
@@ -50,5 +41,9 @@
 | 2 | [log 레벨 변경하기](/tip/change_log_level.md) |
 | 3 | [컨테이너에서 실행한 결과 파일에 작성하기](/tip/get_result_file_from_container.md) |
 
+<br>
 
+## prv
+
+- [Hyperledger fabric v1.4](/prv/v1.4/v1.4.md)
 
