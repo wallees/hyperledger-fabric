@@ -5,6 +5,9 @@ UTIL_PATH=$BASE_PATH/util
 DATA_PATH=$BASE_PATH/data
 CRYPTO_PATH=$UTIL_PATH/cryptogen
 
+sudo rm -Rf $BASE_PATH/data
+mkdir -p $BASE_PATH/data
+
 echo "1. Cryptogen"
 # output = install destination -> $
 # Orderer (3)
@@ -36,7 +39,7 @@ echo ""
 echo "Done"
 
 
-tar cvf data.tar ../data
-scp -r data.tar root@orderer2.mynetwork.com:/root/mynetwork
-scp -r data.tar root@orderer3.mynetwork.com:/root/mynetwork
-sudo rm -f data.tar
+# tar cvf data.tar ../data
+# scp -r data.tar root@orderer2.mynetwork.com:/root/git/src/mynetwork/instance1
+# scp -r data.tar root@orderer3.mynetwork.com:/root/git/src/mynetwork/instance2
+# sudo rm -f data.tar

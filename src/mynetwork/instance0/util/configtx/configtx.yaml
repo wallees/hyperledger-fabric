@@ -5,7 +5,7 @@ Organizations:
     - &OrdererOrg
         Name: OrdererOrg
         ID: OrdererMSP
-        MSPDir: /root/fabric-samples/mynetwork/data/cryptofile/ordererOrganizations/mynetwork.com/msp
+        MSPDir: /root/git/src/mynetwork/instance0/data/cryptofile/ordererOrganizations/mynetwork.com/msp
         Policies:
             Readers:
                 Type: Signature
@@ -25,7 +25,7 @@ Organizations:
     - &Org1        
         Name: Org1MSP
         ID: Org1MSP
-        MSPDir: /root/fabric-samples/mynetwork/data/cryptofile/peerOrganizations/org1.mynetwork.com/msp
+        MSPDir: /root/git/src/mynetwork/instance0/data/cryptofile/peerOrganizations/org1.mynetwork.com/msp
         Policies:
             Readers:
                 Type: Signature
@@ -46,7 +46,7 @@ Organizations:
     - &Org2
         Name: Org2MSP
         ID: Org2MSP
-        MSPDir: /root/fabric-samples/mynetwork/data/cryptofile/peerOrganizations/org2.mynetwork.com/msp
+        MSPDir: /root/git/src/mynetwork/instance0/data/cryptofile/peerOrganizations/org2.mynetwork.com/msp
         Policies:
             Readers:
                 Type: Signature
@@ -109,16 +109,16 @@ Orderer: &OrdererDefaults
         Consenters:
         - Host: orderer1.mynetwork.com
           Port: 10010
-          ClientTLSCert: /root/fabric-samples/mynetwork/data/cryptofile/ordererOrganizations/mynetwork.com/orderers/orderer1.mynetwork.com/tls/server.crt
-          ServerTLSCert: /root/fabric-samples/mynetwork/data/cryptofile/ordererOrganizations/mynetwork.com/orderers/orderer1.mynetwork.com/tls/server.crt
+          ClientTLSCert: /root/git/src/mynetwork/instance0/data/cryptofile/ordererOrganizations/mynetwork.com/orderers/orderer1.mynetwork.com/tls/server.crt
+          ServerTLSCert: /root/git/src/mynetwork/instance0/data/cryptofile/ordererOrganizations/mynetwork.com/orderers/orderer1.mynetwork.com/tls/server.crt
         - Host: orderer2.mynetwork.com
           Port: 10020
-          ClientTLSCert: /root/fabric-samples/mynetwork/data/cryptofile/ordererOrganizations/mynetwork.com/orderers/orderer2.mynetwork.com/tls/server.crt
-          ServerTLSCert: /root/fabric-samples/mynetwork/data/cryptofile/ordererOrganizations/mynetwork.com/orderers/orderer2.mynetwork.com/tls/server.crt
+          ClientTLSCert: /root/git/src/mynetwork/instance0/data/cryptofile/ordererOrganizations/mynetwork.com/orderers/orderer2.mynetwork.com/tls/server.crt
+          ServerTLSCert: /root/git/src/mynetwork/instance0/data/cryptofile/ordererOrganizations/mynetwork.com/orderers/orderer2.mynetwork.com/tls/server.crt
         - Host: orderer3.mynetwork.com
           Port: 10030
-          ClientTLSCert: /root/fabric-samples/mynetwork/data/cryptofile/ordererOrganizations/mynetwork.com/orderers/orderer3.mynetwork.com/tls/server.crt
-          ServerTLSCert: /root/fabric-samples/mynetwork/data/cryptofile/ordererOrganizations/mynetwork.com/orderers/orderer3.mynetwork.com/tls/server.crt
+          ClientTLSCert: /root/git/src/mynetwork/instance0/data/cryptofile/ordererOrganizations/mynetwork.com/orderers/orderer3.mynetwork.com/tls/server.crt
+          ServerTLSCert: /root/git/src/mynetwork/instance0/data/cryptofile/ordererOrganizations/mynetwork.com/orderers/orderer3.mynetwork.com/tls/server.crt
     
     BatchTimeout: 2s
 
