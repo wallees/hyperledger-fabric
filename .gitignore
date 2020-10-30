@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 src/mynetwork/instance1/data/
 src/mynetwork/instance1/volume/
 
+=======
+src/mynetwork/data/
+src/mynetwork/volume/
+>>>>>>> a5d8b8bfa2f809ef735937c209f49156197933aa
