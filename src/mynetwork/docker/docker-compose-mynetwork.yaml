@@ -1,0 +1,49 @@
+version: '2'
+
+volumes:
+  orderer1.mynetwork.com:
+
+networks:
+  mynetwork:
+
+services:
+  orderer1.mynetwork.com:
+    container_name: orderer1.mynetwork.com
+    image: hyperledger/fabric-orderer:latest
+    environment:
+      - FABRIC_LOGGING_SPEC=INFO
+      - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
+      - ORDERER_GENERAL_LISTENPORT=10010
+      - ORDERER_GENERAL_GENESISMETHOD=file
+      - ORDERER_GENERAL_GENESISFILE=/var/hyperledger/orderer/orderer.genesis.block
+      - ORDERER_GENERAL_LOCALMSPID=OrdererMSP
+      - ORDERER_GENERAL_LOCALMSPDIR=/var/hyperledger/orderer/msp
+      # enabled TLS
+      - ORDERER_GENERAL_TLS_ENABLED=true
+      - ORDERER_GENERAL_TLS_PRIVATEKEY=/var/hyperledger/orderer/tls/server.key
+      - ORDERER_GENERAL_TLS_CERTIFICATE=/var/hyperledger/orderer/tls/server.crt
+      - ORDERER_GENERAL_TLS_ROOTCAS=[/var/hyperledger/orderer/tls/ca.crt]
+      - ORDERER_KAFKA_TOPIC_REPLICATIONFACTOR=1
+      - ORDERER_KAFKA_VERBOSE=true
+      - ORDERER_GENERAL_CLUSTER_CLIENTCERTIFICATE=/var/hyperledger/orderer/tls/server.crt
+      - ORDERER_GENERAL_CLUSTER_CLIENTPRIVATEKEY=/var/hyperledger/orderer/tls/server.key
+      - ORDERER_GENERAL_CLUSTER_ROOTCAS=[/var/hyperledger/orderer/tls/ca.crt]
+    working_dir: /opt/gopath/src/github.com/hyperledger/fabric
+    command: orderer
+    volumes:
+        - /root/mynetwork/data/channel-artifacts/system-genesis-block/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
+        - /root/mynetwork/data/cryptofile/ordererOrganizations/mynetwork.com/orderers/orderer1.mynetwork.com/msp:/var/hyperledger/orderer/msp
+        - /root/mynetwork/data/cryptofile/ordererOrganizations/mynetwork.com/orderers/orderer1.mynetwork.com/tls/:/var/hyperledger/orderer/tls
+        #- orderer1.mynetwork.com:/var/hyperledger/production/orderer
+        #- /root/mynetwork/volume/orderer1.mynetwork.com:/var/hyperledger/production/orderer
+    ports:
+      - 10010:10010
+    networks:
+      - mynetwork
+    extra_hosts:
+      - orderer1.mynetwork.com:10.140.0.11
+      - orderer2.mynetwork.com:10.140.0.12
+      - orderer3.mynetwork.com:10.128.0.3
+      - peer1.org1.mynetwork.com:10.140.0.12
+      - peer1.org2.mynetwork.com:10.128.0.3
+      - peer2.org2.mynetwork.com:10.128.0.3

@@ -1,0 +1,10 @@
+OrdererOrgs:
+  - Name: Orderer
+    Domain: mynetwork.com
+    EnableNodeOUs: true
+    Template:
+      Count: 3
+      Start: 1
+    # Users:
+    #   Count: 3
+
