@@ -80,4 +80,60 @@
 
       > Error on outputBlock: could not create bootstrapper: could not create channel group: could not create orderer group: error adding policies to orderer group: no policies defined
 
-  - 
+      - 기존의 v1.4.4까지는 해당 정책을 주석처리 해도 문제없이 genesis block을 생성할 수 있었다.
+
+  - 확인하던 중, Organizations/&Org 부분에 처음보는 정책을 확인(v1.4.4 까지는 sample config.yaml에서 확인 못했음)
+
+    ```
+    - &Org1        
+            Name: Org1MSP
+            ID: Org1MSP
+            MSPDir: /root/git/src/mynetwork/instance0/data/cryptofile/peerOrganizations/org1.mynetwork.com/msp
+            Policies:
+                Readers:
+                    Type: Signature
+                    Rule: "OR('Org1MSP.admin', 'Org1MSP.peer', 'Org1MSP.client')"
+                Writers:
+                    Type: Signature
+                    Rule: "OR('Org1MSP.admin', 'Org1MSP.client')"
+                Admins:
+                    Type: Signature
+                    Rule: "OR('Org1MSP.admin')"
+                Endorsement: #<- 기존에는 Endorsement 정책이 없었다. 내가 못찾았던 것일까?
+                    Type: Signature
+                    Rule: "OR('Org1MSP.peer')"
+    ```
+
+  - Policies의 Rule 부분을 변경해보기로 함(Org1만)
+
+    ```
+     - &Org1
+            Name: Org1MSP
+            ID: Org1MSP
+            MSPDir: /root/git/src/mynetwork/instance0/data/cryptofile/peerOrganizations/org1.mynetwork.com/msp
+            Policies:
+                Readers:
+                    Type: Signature
+                    # Rule: "OR('Org1MSP.admin', 'Org1MSP.peer', 'Org1MSP.client')"
+                    Rule: "OR('Org1MSP.member')" #<- 변경
+                Writers:
+                    Type: Signature
+                    # Rule: "OR('Org1MSP.admin', 'Org1MSP.client')"
+                    Rule: "OR('Org1MSP.member')" #<- 변경
+                Admins:
+                    Type: Signature
+                    Rule: "OR('Org1MSP.admin')"
+                Endorsement:
+                    Type: Signature
+                    Rule: "OR('Org1MSP.peer')"
+            AnchorPeers:
+                - Host: peer1.org1.mynetwork.com
+                  Port: 17051
+    ```
+
+- **결과: 정상적으로 채널이 생성됨. 오류 메시지와는 조금 맞지 않아서 재확인이 필요함**
+
+
+
+
+
