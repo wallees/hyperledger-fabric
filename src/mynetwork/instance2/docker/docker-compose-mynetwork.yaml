@@ -59,7 +59,7 @@ services:
       # the following setting starts chaincode containers on the same
       # bridge network as the peers
       # https://docs.docker.com/compose/networking/
-      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=mynetwork
+      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=mynetwork_test
       - FABRIC_LOGGING_SPEC=INFO
       #- FABRIC_LOGGING_SPEC=DEBUG
       - CORE_PEER_TLS_ENABLED=true
@@ -85,6 +85,7 @@ services:
     command: peer node start
     ports:
       - 27051:27051
+      - 27052:27052
     networks:
       - mynetwork
     extra_hosts:
@@ -104,7 +105,7 @@ services:
       # the following setting starts chaincode containers on the same
       # bridge network as the peers
       # https://docs.docker.com/compose/networking/
-      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=mynetwork
+      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=mynetwork_test
       - FABRIC_LOGGING_SPEC=INFO
       #- FABRIC_LOGGING_SPEC=DEBUG
       - CORE_PEER_TLS_ENABLED=true
@@ -130,6 +131,7 @@ services:
     command: peer node start
     ports:
       - 28051:28051
+      - 28052:28052
     networks:
       - mynetwork
     extra_hosts:
