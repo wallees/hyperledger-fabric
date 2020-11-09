@@ -1,9 +1,0 @@
-PeerOrgs:
-  - Name: Org2
-    Domain: org2.mynetwork.com
-    EnableNodeOUs: true
-    Template:
-      Count: 2
-      Start: 1
-    Users:
-      Count: 2
