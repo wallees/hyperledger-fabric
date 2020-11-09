@@ -204,7 +204,7 @@ peer chaincode invoke -o orderer1.mynetwork.com:10010 --ordererTLSHostnameOverri
 쿼리(query) 과정은 동일하다.
 
 ```shell
-peer chaincode query -C mychannel -n basic -c '{"Args":["GetAllAssets"]}'
+peer chaincode query -C mychannel -n fabcar -c '{"Args":["queryAllCars"]}'
 ```
 
 <br>
@@ -213,3 +213,4 @@ peer chaincode query -C mychannel -n basic -c '{"Args":["GetAllAssets"]}'
 
 체인코드를 업그레이드 하는 과정도 위의 체인코드 설치 및 초기화 과정과 전부 동일하다. 
 
+(작성예정)

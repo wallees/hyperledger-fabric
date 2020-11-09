@@ -8,7 +8,7 @@
   - 도메인: mynetwork.com
     - orderer: orderer1.mynetwork.com, orderer2.mynetwork.com, orderer3.mynetwork.com
     - org1: peer1.org1.mynetwork.com
-    - org2: peer1.org2.mynetwork.com. peer2.org2.mynetwork.com
+    - org2: peer1.org2.mynetwork.com
   - VM: 총 1대
 - 경로: /root/git/src/mynetwork/single
 
@@ -125,7 +125,7 @@
                     Rule: "OR('Org1MSP.peer')"
             AnchorPeers:
                 - Host: peer1.org1.mynetwork.com
-                  Port: 17051
+                  Port: 7051
     ```
 
 - **결과: 정상적으로 채널이 생성됨. 오류 메시지와는 조금 맞지 않아서 재확인이 필요함**
