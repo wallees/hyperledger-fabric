@@ -1,6 +1,8 @@
 # Deploying a smart contract to a channel
 
 > Hyperledger Fabric v2.x에서 가장 큰 변화는 스마트 컨트랙트(이하 체인코드) 부분이므로, 이 부분을 조금 더 자세히 살펴보고자 한다.
+>
+> 체인코드는 fabcar를 사용한다.
 
 <br>
 
@@ -17,18 +19,12 @@
 go언어를 기준으로 설명하면, go.mod 파일에 의존성 라이브러리 목록이 적히게 된다.
 
 ```go
-# asset-transfer-basic/chaincode-go/go.mod
-module github.com/hyperledger/fabric-samples/asset-transfer-basic/chaincode-go
+# file/chaincode/fabcar/go/go.mod
+module github.com/hyperledger/fabric-samples/chaincode/fabcar/go
 
-go 1.14
+go 1.13
 
-require (
-	github.com/golang/protobuf v1.3.2
-	github.com/hyperledger/fabric-chaincode-go v0.0.0-20200424173110-d7076418f212
-	github.com/hyperledger/fabric-contract-api-go v1.1.0
-	github.com/hyperledger/fabric-protos-go v0.0.0-20200424173316-dd554ba3746e
-	github.com/stretchr/testify v1.5.1
-)
+require github.com/hyperledger/fabric-contract-api-go v1.1.0
 ```
 
 의존성 파일은 module 하위의 경로(gopath 기준)에 위치하게 되며, 이러한 의존성 라이브러리 파일들은 vendor에 설치된다.
@@ -43,26 +39,24 @@ peer lifecycle chaincode package ${TAR_FILE} --path ${SRC_PATH} / --lang ${LANGU
 ```
 
 - TAR_FILE: 패키징 결과 생성되는 파일의 이름 및 확장자 (basic.tar.gz)
-- SRC_PATH: 패키징에 사용되는 체인코드 파일의 경로 (../asset-transfer-basic/chaincode-go/)
+- SRC_PATH: 패키징에 사용되는 체인코드 파일의 경로 (.../file/chaincode/fabcar/go)
 - LANGUAGE: 체인코드 언어 (golang)
-- LABEL: 설치된 체인코드를 구별하기 위해 사용, 체인코드의 이름과 버전을 함께 명시할 것을 권장 (basic_1.0)
+- LABEL: 설치된 체인코드를 구별하기 위해 사용, 체인코드의 이름과 버전을 함께 명시할 것을 권장 (fabcar_1)
 
-패키징 된 체인코드(basic.tar.gz) 파일 내부를 보면 다음과 같다.
+패키징 된 체인코드(fabcar.tar.gz) 파일 내부를 보면 다음과 같다.
 
 ```
-basic.tar.gz
+fabcar.tar.gz
 ㄴ metadata.json
 ㄴ code.tar.gz
    ㄴ src
-      ㄴ assetTransfer.go
-      ㄴ chaincode
-         ㄴ smartcontract.go (+ smartcontract_test.go, mocks)
+      ㄴ fabcar.go      
       ㄴ go.mod, go.sum
       ㄴ vendor
          ㄴ github.com, golang.org, google.golang.org, gopkg.in, modules.txt
 ```
 
-사용하려고 했던 체인코드의 경로(/asset-transfer-basic/chaincode-go/)에 있는 모든 파일을 압축해놓은 것이라고 보면 되겠다.
+사용하려고 했던 체인코드의 경로(.../file/chaincode/fabcar/go)에 있는 모든 파일을 압축해놓은 것이라고 보면 되겠다.
 
 <br>
 
@@ -71,7 +65,7 @@ basic.tar.gz
 위에서 패키징 된 체인코드(.tar.gz)를 각 피어에 설치해준다.
 
 ```shell
-peer lifecycle chaincode install basic.tar.gz
+peer lifecycle chaincode install fabcar.tar.gz
 ```
 
 <br>
@@ -96,7 +90,7 @@ peer lifecycle chaincode queryinstalled
 
 ```shell
 Installed chaincodes on peer:
-Package ID: basic_1.0:69de748301770f6ef64b42aa6bb6cb291df20aa39542c3ef94008615704007f3, Label: basic_1.0
+Package ID: fabcar_1:69de748301770f6ef64b42aa6bb6cb291df20aa39542c3ef94008615704007f3, Label: fabcar_1
 ```
 
 - 패키지 ID는 체인코드 라벨과 체인코드 바이너리의 해시값을 조합한 형태로 구성된다.
@@ -105,7 +99,7 @@ Package ID: basic_1.0:69de748301770f6ef64b42aa6bb6cb291df20aa39542c3ef9400861570
 이제 체인코드의 승인 과정에 위의 패키지 ID를 사용한다. 
 
 ```shell
-export CC_PACKAGE_ID=basic_1.0:69de748301770f6ef64b42aa6bb6cb291df20aa39542c3ef94008615704007f3
+PACKAGE_ID=$(sed -n "/${CC_NAME}_${CC_VERSION}/{s/^Package ID: //; s/, Label:.*$//; p;}" packageId.txt)
 ```
 
 > **TODO**: 완벽하게 같은 체인코드를 라벨만 다르게 하여 구성한다면, 체인코드 바이너리를 구성하는 해시값은 그대로 유지되고 라벨만 다르게 변경되는가?
@@ -113,7 +107,7 @@ export CC_PACKAGE_ID=basic_1.0:69de748301770f6ef64b42aa6bb6cb291df20aa39542c3ef9
 체인코드 승인 과정은 org 단위로 진행되며, 각 org별로 하나의 피어에서 승인 과정이 통과되면 gossip 통신을 이용하여 결과가 다른 피어로 전달된다. 그러므로 각 org마다 한 번씩 승인과정을 진행하면 된다.
 
 ```shell
-peer lifecycle chaincode approveformyorg -o ${ORDERER_ADDR} --ordererTLSHostnameOverride ${ORDERER_TLS_HOSTNAME} --channelID mychannel --name basic --version 1.0 --package-id ${CC_PACKAGE_ID} --sequence ${SEQUENCE} --tls --cafile ${ORDERER_CA}
+peer lifecycle chaincode approveformyorg -o orderer1.mynetwork.com:10010 --ordererTLSHostnameOverride orderer1.mynetwork.com --tls --cafile $ORDERER_CA --channelID $CHANNEL_NAME --name $CC_NAME --version ${CC_VERSION} --init-required --package-id ${PACKAGE_ID} --sequence ${CC_VERSION}
 ```
 
 - ORDERER_ADDR: 승인 과정에 참여할 오더러(orderer)의 주소 (localhost:7050 / orderer1.mynetwork.com:7050)
@@ -163,8 +157,17 @@ peer lifecycle chaincode checkcommitreadiness --channelID mychannel --name ${CC_
 승인 과정이 정상적으로 완료되었다는 것을 확인하였으면, 실제 커밋 과정을 진행한다.
 
 ```shell
-peer lifecycle chaincode commit -o ${ORDERER_ADDR} --ordererTLSHostnameOverride ${ORDERER_TLS_HOSTNAME} --channelID mychannel --name basic --version 1.0 --sequence 1 --tls --cafile ${ORDERER_CA} --peerAddresses ${ORG1_PEER_ADDR} --tlsRootCertFiles ${ORG1_PEER_ROOTCERTFILE} --peerAddresses ${ORG2_PEER_ADDR} --tlsRootCertFiles ${ORG2_PEER_ROOTCERTFILE}
+peer lifecycle chaincode commit -o orderer1.mynetwork.com:10010 --ordererTLSHostnameOverride orderer1.mynetwork.com \
+--tls --cafile $ORDERER_CA \
+--channelID $CHANNEL_NAME --name $CC_NAME --version ${CC_VERSION} --sequence ${CC_VERSION} --init-required \
+--peerAddresses peer1.org1.mynetwork.com:7051 --tlsRootCertFiles $ORG1_ROOT_CA \
+--peerAddresses peer1.org2.mynetwork.com:9051 --tlsRootCertFiles $ORG2_ROOT_CA
 ```
+
+> Error: transaction invalidated with status (ENDORSEMENT_POLICY_FAILURE) 
+>
+> - commit 트랜잭션이 endorsement policy를 충족하지 못했을 경우 발생하며, configtx.yaml의 Channel/Application/Endorsement에 작성되어 있다.
+> - 각 Org별 Endorsement 정책과 Application/Policies를 확인하여 org별 피어를 추가해주도록 한다.
 
 > 대부분 승인 과정에서 사용한 형식과 비슷한 것을 볼 수 있는데, 기존에 v1.4.x 에서 invoke 과정에서만 각 피어의 TLS ROOT CERT 파일의 경로를 모두 참조했던 것과 다르게 커밋 과정에서도 동일하게 진행하는 것을 볼 수 있다. 
 
@@ -174,29 +177,31 @@ peer lifecycle chaincode commit -o ${ORDERER_ADDR} --ordererTLSHostnameOverride 
 체인코드가 채널에 커밋된 것을 확인하려면 peer lifecycle chaincode querycommitted를 사용한다.
 
 ```shell
-peer lifecycle chaincode querycommitted --channelID mychannel --name basic --cafile ${ORDERER_CA}
+peer lifecycle chaincode querycommitted --channelID $CHANNEL_NAME --name $CC_NAME
 ```
 
 정상적으로 커밋이 완료된 경우, 예시로 다음과 같은 결과값을 보인다.
 
 ```shell
-Committed chaincode definition for chaincode 'basic' on channel 'mychannel':
-Version: 1.0, Sequence: 1, Endorsement Plugin: escc, Validation Plugin: vscc, Approvals: [Org1MSP: true, Org2MSP: true]
+Committed chaincode definition for chaincode 'fabcar' on channel 'mychannel':
+Version: 1, Sequence: 1, Endorsement Plugin: escc, Validation Plugin: vscc, Approvals: [Org1MSP: true, Org2MSP: true]
 ```
 
 <br>
 
-## Invoking the chaincode
+## Invoking the chaincode (Init)
 
-체인코드 호출(invoke) 과정은 이전 v1.4.x 버전과 크게 다른 부분이 없다. 
+체인코드 호출(invoke) 과정에서 이전 v1.4.x 버전과 다른 부분이 있다면, initiation 과정이 사라지고 invoke 과정에 --isInit 플래그를 사용하여 초기화를 동시에 진행한다는 것이다. 
 
 ```shell
-# 예시 (mynetwork)
-export ORDERER_CA=$DATA_PATH/cryptofile/ordererOrganizations/mynetwork.com/orderers/orderer1.mynetwork.com/msp/tlscacerts/tlsca.mynetwork.com-cert.pem
-peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer1.mynetwork.com --tls --cafile ${ORDERER_CA} -C mychannel -n basic --peerAddresses peer1.org1.mynetwork.com:17051 --tlsRootCertFiles ${PEER1_ORG1_CERT} --peerAddresses peer1.org2.mynetwork.com:27051 --tlsRootCertFiles ${PEER1_ORG2_CERT} --tlsRootCertFiles ${PEER2_ORG2_CERT} --peerAddresses peer2.org2.mynetwork.com:28051 --tlsRootCertFiles ${PEER2_ORG2_CERT} -c '{"function":"InitLedger","Args":[]}'
+peer chaincode invoke -o orderer1.mynetwork.com:10010 --ordererTLSHostnameOverride orderer1.mynetwork.com \
+--tls --cafile $ORDERER_CA -C $CHANNEL_NAME -n $CC_NAME \
+--peerAddresses peer1.org1.mynetwork.com:7051 --tlsRootCertFiles $ORG1_ROOT_CA \
+--peerAddresses peer1.org2.mynetwork.com:9051 --tlsRootCertFiles $ORG2_ROOT_CA \
+--isInit -c '{"function":"initLedger","Args":[]}'
 ```
 
-쿼리(query) 과정도 다르지 않다.
+쿼리(query) 과정은 동일하다.
 
 ```shell
 peer chaincode query -C mychannel -n basic -c '{"Args":["GetAllAssets"]}'
