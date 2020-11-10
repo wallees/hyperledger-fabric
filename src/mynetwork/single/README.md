@@ -134,7 +134,7 @@
 
 #### 피어 별 docker-compose 파일의 CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE 규칙 이슈
 
-체인코드 deploy 과정 중 commit이 정상완료된 체인코드가 invoke 되지 않는 문제점이 발생하였고, 알 수 없는 로그가 출력되는 것을 확인함.
+체인코드 [deploy](script/chaincode/deploy.sh) 과정 중 commit이 정상완료된 체인코드가 invoke 되지 않는 문제점이 발생하였고, 알 수 없는 로그가 출력되는 것을 확인함.
 
 ```shell
 2020-11-06 08:29:30.403 UTC [endorser] callChaincode -> INFO 07a finished chaincode: testcc duration: 1381ms channel=mychannel txID=1c5a4e75
