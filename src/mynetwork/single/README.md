@@ -26,13 +26,13 @@
 
 ## 이슈사항
 
-
+####  Orderer의 cryptogen 과정에서 User 유무에 따른 sub-policies 충족 이슈
 
 채널 생성 과정에서 '*error authorizing update: error validating DeltaSet: policy for [Group] /Channel/Application not satisfied: implicit policy evaluation failed - 0 sub-policies were satisfied, but this policy requires 1 of the 'Admins' sub-policies to be satisfied*' 오류 발생
 
 - orderer의 cryptogen 과정에서 User를 추가함으로 발생하는 오류였음 
 
-- [crypto-config-orderer.yaml](instance0/util/cryptogen/crypto-config-orderer.yaml) 
+- [crypto-config-orderer.yaml](file/cryptogen/crypto-config-orderer.yaml) 
 
   ```
   OrdererOrgs:
@@ -50,7 +50,7 @@
 
 **OrdererOrgs/Users 부분을 추가하더라도 오류가 나지 않도록 하는 방법은 없을까?**
 
-- [configtx.yaml](instance0/util/configtx/configtx.yaml)
+- [configtx.yaml](file/configtx/configtx.yaml)
 
   - Orderer/Policies 부분을 전부 주석처리
 
@@ -132,5 +132,49 @@
 
 
 
+#### 피어 별 docker-compose 파일의 CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE 규칙 이슈
 
+체인코드 deploy 과정 중 commit이 정상완료된 체인코드가 invoke 되지 않는 문제점이 발생하였고, 알 수 없는 로그가 출력되는 것을 확인함.
 
+```shell
+2020-11-06 08:29:30.403 UTC [endorser] callChaincode -> INFO 07a finished chaincode: testcc duration: 1381ms channel=mychannel txID=1c5a4e75
+2020-11-06 08:29:30.403 UTC [endorser] SimulateProposal -> ERRO 07b failed to invoke chaincode testcc, error: container exited with 0
+github.com/hyperledger/fabric/core/chaincode.(*RuntimeLauncher).Launch.func1
+        /go/src/github.com/hyperledger/fabric/core/chaincode/runtime_launcher.go:118
+runtime.goexit
+        /usr/local/go/src/runtime/asm_amd64.s:1373
+chaincode registration failed
+could not launch chaincode testcc_1:38f2d296b578bab89b0a37f6c7cf91e6ad3315d81754102297e6eaf187712871
+```
+
+##### 해결방법
+
+각 피어 별 docker-compose 파일의 CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE 항목 규칙을 맞추어야 한다.
+
+```
+peer1.org1.mynetwork.com:
+    container_name: peer1.org1.mynetwork.com
+    image: hyperledger/fabric-peer:latest
+    environment:
+      ...
+      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=docker_mynetwork
+      ...
+```
+
+- CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE={docker-compose 디렉토리}_{네트워크}
+
+  - docker-compose 디렉토리: 본 docker-compose.yaml 파일이 있는 경로의 상위 디렉토리(본 예시에서는 docker/docker-compose.yaml)
+
+  > Guide에 따르면, 디렉토리 이름에 따라 해당 란의 작성이 달라지게 된다.
+  >
+  > mynetwork 네트워크 내에서,
+  >
+  > - basic/docker-compose.yaml -> basic_mynetwork
+  >
+  > - new-basic/docker-compose.yaml -> new_basic_mynetwork
+  > - new_basic/docker-compose.yaml -> new_basic_mynetwork
+  > - new_Basic/docker-compose.yaml -> new_basic_mynetwork
+
+  - 네트워크: 도커가 실행되는 네트워크(본 예시에서는 mynetwork)
+
+  
