@@ -16,11 +16,19 @@
 
 ## 진행 순서
 
-1. 프로파일 생성
-2. 도커 실행
-3. 채널 생성
-4. 체인코드 설치 및 배포 
-5. 테스트
+1. [프로파일 생성](script/environment/create_profile.sh)
+
+2. [도커 실행](script/environment/docker.sh)
+
+3. [채널 생성](script/channel/create_channel.sh)
+
+4. [체인코드 설치 및 배포](script/chaincode/deploy.sh) 
+
+   > [체인코드 deployment](script/chaincode/docs/deploy_cc.md)
+   >
+   > - 체인코드 deploy는 Hyperledger fabric v2.x에서 가장 크게 변화된 부분 중 하나이므로, 별도의 문서로 과정을 정리한다.
+
+5. [테스트](chaincode/invoke.sh)
 
 <br>
 

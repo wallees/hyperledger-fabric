@@ -2,7 +2,7 @@
 
 > Hyperledger Fabric v2.x에서 가장 큰 변화는 스마트 컨트랙트(이하 체인코드) 부분이므로, 이 부분을 조금 더 자세히 살펴보고자 한다.
 >
-> 체인코드는 fabcar를 사용한다.
+> 체인코드는 fabcar를 사용한다. 소스는 [이곳](script/chaincode/deploy.sh)에서 볼 수 있다.
 
 <br>
 
