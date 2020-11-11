@@ -18,7 +18,7 @@
 
 1. [프로파일 생성](script/environment/create_profile.sh)
 
-   - ./create_profile.sh
+   - ./create_profile.sh mychannel
 
 2. [도커 실행](script/environment/docker.sh)
 
