@@ -32,10 +32,8 @@
 
    - ./deploy.sh mychannel fabcar 1
 
-   > [체인코드 deployment](script/chaincode/docs/deploy_cc.md)
-   >
-   > - 체인코드 deploy는 Hyperledger fabric v2.x에서 가장 크게 변화된 부분 중 하나이므로, 별도의 문서로 과정을 정리한다.
-
+   > [체인코드 deployment](script/chaincode/docs/deploy_cc.md): 체인코드 deploy는 Hyperledger fabric v2.x에서 가장 크게 변화된 부분 중 하나이므로, 별도의 문서로 과정을 정리한다.
+   
 5. [테스트](chaincode/invoke.sh)
 
    - ./invoke.sh | ./query.sh
