@@ -213,5 +213,7 @@ peer chaincode query -C mychannel -n fabcar -c '{"Args":["queryAllCars"]}'
 
 체인코드를 업그레이드 하는 과정도 위의 체인코드 설치 및 초기화 과정과 전부 동일하다. 
 
-(작성예정)
+Hyperledger fabric v2.2에서 chaincode lifecycle을 적용하면 upgrade 명령어가 아닌 invoke 과정에서 체인코드를 initialize 해준다.
+
+실제 체인코드의 업그레이드 과정은 같은 이름의 체인코드 버전을 증가시키는 것으로, approve -> commit 과정을 진행하면서 새로운 버전의 체인코드 설치는 마무리된다. 그러므로 이후 invoke 과정을 통해 체인코드를 인스턴스화 시켜준다.
 
