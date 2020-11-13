@@ -54,5 +54,3 @@ Developing Applications
 ## prv 
 
 - [Hyperledger fabric v1.4](/prv/v1.4/v1.4.md)
-
-https://docs.google.com/forms/d/e/1FAIpQLSdn7KVsqgxYG5q75-2XqTRXkeqw09NNrL8MdqKgUblOTtJGUA/viewform?usp=pp_url
