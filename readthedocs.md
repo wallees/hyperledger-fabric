@@ -4,7 +4,7 @@
 
 Hyperledger Fabric의 공식 문서 '[Hyperledger Fabric - Read the docs](https://hyperledger-fabric.readthedocs.io/en/release-2.2/)'를 학습, 번역한 내용을 정리합니다.
 
-내용은 개인 블로그 [월리의 탐구생활](wnjoon.tistory.com)에 작성됩니다.
+내용은 개인 블로그 [월리의 탐구생활](https://wnjoon.tistory.com)에 작성됩니다.
 
 - 버전: v2.2.x
 - 최근 작성일자: 2021.02.17
