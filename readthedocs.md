@@ -20,7 +20,7 @@ Hyperledger Fabric의 공식 문서 '[Hyperledger Fabric - Read the docs](https:
 - Getting Started
 - Developing Applications
 - Tutorials
-- Deploying a production network
+- [Deploying a production network](https://wnjoon.tistory.com/33)
 - Operations Guides
 - Upgrading to the latest release
 - Commands References
