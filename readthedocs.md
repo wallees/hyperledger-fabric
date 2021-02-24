@@ -25,6 +25,7 @@ Hyperledger Fabric의 공식 문서 '[Hyperledger Fabric - Read the docs](https:
 - Upgrading to the latest release
 - Commands References
 - Architecture References
+  - [Service discovery](https://wnjoon.tistory.com/34)
 - Frequently Asked Questions
 - Contribution Welcome!
 - Glossary
